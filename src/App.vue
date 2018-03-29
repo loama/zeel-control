@@ -43,16 +43,30 @@
     <div id="content">
       <router-view/>
     </div>
+
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
+import * as VueGoogleMaps from 'vue2-google-maps'
 import router from './router'
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyAklFaRZ_-DkHDdy0gwWe4K4VdTj_puWzc '
+    // libraries: 'places' // This is required if you use the Autocomplete plugin
+    // OR: libraries: 'places,drawing'
+    // OR: libraries: 'places,drawing,visualization'
+    // (as you require)
+  }
+})
+
 export default {
   data () {
     return {
       navigation: {
-        position: '48px',
+        position: '0',
         indicator: {
           activity: {
             opacity: 1
@@ -227,6 +241,6 @@ export default {
   }
 
   #content {
-    padding: 48px 0 0 48px;
+    padding: 40px 0 0 40px;
   }
 </style>
