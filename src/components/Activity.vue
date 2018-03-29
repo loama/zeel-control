@@ -1,14 +1,12 @@
 <template>
   <div class="activity">
-    <gmap-map
-      :center="{lat:40.7563436, lng:-73.9833284}"
-      :zoom="13"
-      map-type-id="terrain"
-      style="width: calc(100vw - 48px); height: calc(100vh - 48px); position:absolute; top: 48px; left: 48px;"
-    >
-    </gmap-map>
 
-    <div id="activity-card"></div>
+    <div id="activity-card">
+      <div class="filter"></div>
+      <ul>
+        <li></li>
+      </ul>
+    </div>
 
   </div>
 </template>
@@ -36,5 +34,26 @@ export default {
     box-shadow: 0 1px 3px #ACACAC;
     border-radius: 2px;
     background: #FFF;
+  }
+
+  #activity-card .filter {
+    height: 48px;
+    width: 400px;
+    border-bottom: 1px solid #E5E5E5;
+    background: #292929;
+    border-radius: 2px 2px 0 0;
+    position: fixed;
+  }
+
+  #activity-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  #activity-card ul li {
+    height: 80px;
+    width: 100%;
+    border-bottom: 1px solid #E5E5E5;
+    padding-top: 40px;
   }
 </style>

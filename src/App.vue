@@ -40,6 +40,14 @@
       <img class="white" v-bind:style="{ opacity: navigation.indicator.analytics.opacity }" src="./assets/icons/ic_timeline_white.svg">
     </div>
 
+    <gmap-map
+      :center="{lat:40.7563436, lng:-73.9833284}"
+      :zoom="13"
+      map-type-id="terrain"
+      style="width: calc(100vw - 48px); height: calc(100vh - 48px); position:absolute; top: 48px; left: 48px; z-index:0"
+    >
+    </gmap-map>
+
     <div id="content">
       <router-view/>
     </div>
